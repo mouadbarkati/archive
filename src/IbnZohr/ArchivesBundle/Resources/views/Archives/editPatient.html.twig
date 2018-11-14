@@ -1,0 +1,60 @@
+{% extends 'IbnZohrArchivesBundle:Base:layout.html.twig' %}
+
+{% block body %}
+    <div class="row" style="height:40vh;width:80%;margin:auto;">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption font-red-sunglo">
+                                <i class="icon-settings font-red-sunglo"></i>
+                                <span class="caption-subject bold uppercase"> Modifier Patient</span>
+                            </div>
+                        </div>
+
+                        <div class="portlet-body form">
+                            <form role="form" method="POST" action="{{ path('archives_editPatient',{'id':patient.id }) }}">
+                                <div class="form-body">
+
+
+                                    <div class="form-group">
+                                        <label>Prénom</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="prenom" class="form-control" placeholder="Prénom">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nom</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="nom" class="form-control"  placeholder="Nom">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Age</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="age" class="form-control"  placeholder="Age">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Adresse</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="adresse" class="form-control"  placeholder="Adresse">
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="btn green" value="Modifer Patient" />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END SAMPLE FORM PORTLET-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends 'IbnZohrArchivesBundle:Base:layout.html.twig' %}
+
+{% block body %}
+    <div class="row" style="height:40vh;width:80%;margin:auto;">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption font-red-sunglo">
+                                <i class="icon-settings font-red-sunglo"></i>
+                                <span class="caption-subject bold uppercase"> Modifier Archivage</span>
+                            </div>
+                        </div>
+
+                        <div class="portlet-body form">
+                            <form role="form" method="POST" action="{{ path('archives_edit',{'id':storing.id }) }}">
+                                <div class="form-body">
+                                    <div class="form-group">
+                                        <label>Type</label>
+                                        <div class="mt-radio-inline">
+                                            <label class="mt-radio">
+                                                <input type="radio" name="type" id="optionsRadios4" value="Hospitalisation" checked="" > Hospitalisation
+                                                <span></span>
+                                            </label>
+                                            {#<label class="mt-radio">
+                                                <input type="radio" name="type" id="optionsRadios5" value="Consultation" readonly> Consultation
+                                                <span></span>
+                                            </label>
+                                            <label class="mt-radio">
+                                                <input type="radio" name="type" id="optionsRadios5" value="Examen" readonly> Examen
+                                                <span></span>
+                                            </label>#}
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Service</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <select name="service" class="form-control">
+
+                                                {% for service in services %}
+                                                    <option value="{{service.id}}"
+                                                            {% if storing.hospitalization.service.id == service.id %} selected {% endif %}>{{ service.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Numero</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="number" class="form-control" value="{{ storing.hospitalization.hospNumber }}" placeholder="Votre Numero">
+                                        </div>
+                                    </div>
+                                    <div style="display: inline-flex; width: 100%;">
+                                        <div class="form-group" style="width:40%;margin-left: 2.5%;" >
+                                            <label>Prénom</label>
+                                            <div class="input-icon">
+                                                <i class="fa fa-bell-o font-green"></i>
+                                                <input type="text" name="prenom" class="form-control" value="{{ storing.hospitalization.patient.firstName }} "placeholder="Votre Prénom">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="width:40%;margin-left: 15%;">
+                                            <label>Nom</label>
+                                            <div class="input-icon">
+                                                <i class="fa fa-bell-o font-green"></i>
+                                                <input type="text" name="nom" class="form-control" value="{{ storing.hospitalization.patient.lastName }}" placeholder="Votre Nom">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div style="display: inline-flex; width: 100%; ">
+                                        <div class="form-group" style="width:40%;margin-left: 2.5%;">
+                                            <label>Age</label>
+                                            <div class="input-icon">
+                                                <i class="fa fa-bell-o font-green"></i>
+                                                <input type="text" name="age" class="form-control" value="{{ storing.hospitalization.patient.age }}" placeholder="Votre Age">
+                                            </div>
+                                        </div>
+                                        <div class="form-group" style="width:40%; margin-left: 15%;">
+                                            <label>Adresse</label>
+                                            <div class="input-icon">
+                                                <i class="fa fa-bell-o font-green"></i>
+                                                <input type="text" name="adresse" class="form-control" value="{{ storing.hospitalization.patient.address }}" placeholder="Votre Adresse">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Date hospitalization</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="date" name="date" class="form-control" value="{{ storing.hospitalization.hospDate|date("Y-m-d") }}" placeholder="Date">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Année hospitalization</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="year" class="form-control" value="{{ "now"|date("Y") }}" placeholder="Année">
+                                        </div>
+                                    </div>
+
+                                    <input type="submit" class="btn green" value="Modifer Archivage" />
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END SAMPLE FORM PORTLET-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

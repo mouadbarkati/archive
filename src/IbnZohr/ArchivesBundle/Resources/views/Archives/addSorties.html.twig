@@ -1,0 +1,70 @@
+{% extends 'IbnZohrArchivesBundle:Base:layout.html.twig' %}
+
+{% block body %}
+    <div class="row" style="height:40vh;width:80%;margin:auto;">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <!-- BEGIN SAMPLE FORM PORTLET-->
+                    <div class="portlet light bordered">
+                        <div class="portlet-title">
+                            <div class="caption font-red-sunglo">
+                                <i class="icon-settings font-red-sunglo"></i>
+                                <span class="caption-subject bold uppercase"> Ajouter Sortie</span>
+                            </div>
+                        </div>
+
+                        <div class="portlet-body form">
+                            <form role="form" method="POST" action="{{ path('archives_addsorties',{'id':storing_id}) }}">
+                                <div class="form-body">
+
+
+
+                                    <div class="form-group">
+                                        <label>date de sortie </label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="date" class="form-control" value="{{ "now"|date("Y-m-d") }}" placeholder="date de sortie ">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Service</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <select name="service" class="form-control">
+                                                {% for service in services %}
+                                                    <option value="{{service.id}}">{{ service.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Demandeur</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="demandeur" class="form-control"  placeholder="Demandeur">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Observation</label>
+                                        <div class="input-icon">
+                                            <i class="fa fa-bell-o font-green"></i>
+                                            <input type="text" name="observation" class="form-control"  placeholder="Observation">
+                                        </div>
+                                    </div>
+
+                                    <input type="submit" class="btn green" value="Ajouter Sortie" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END SAMPLE FORM PORTLET-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

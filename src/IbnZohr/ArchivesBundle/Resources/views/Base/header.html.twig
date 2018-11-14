@@ -1,0 +1,82 @@
+<div class="page-wrapper-row">
+
+    <div class="page-wrapper-top">
+
+        <div class="page-header">
+
+            <div class="page-header-top">
+
+                <div class="container">
+
+                    <div class="page-logo">
+
+                        <a href=" http://www.sante.gov.ma/Pages/Accueil.aspx">
+                            <img src=" {{ asset('bundles/ibnzohrarchives/img/logo.jpg') }} " alt="logo"  style="height: 65px;margin-top:10px;" class="logo-default">
+                        </a>
+
+                    </div>
+
+                    <a href="javascript:;" class="menu-toggler"></a>
+
+                </div>
+
+            </div>
+
+            <div class="page-header-menu">
+
+                <div class="container">
+
+                    <form class="search-form" action="page_general_search.html" method="GET">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search" name="query">
+                            <span class="input-group-btn">
+                                <a href="javascript:;" class="btn submit">
+                                    <i class="icon-magnifier"></i>
+                                </a>
+                            </span>
+                        </div>
+                    </form>
+
+                    <div class="hor-menu  ">
+                        <ul class="nav navbar-nav">
+
+                            <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                <a href=" {{ path('ibn_zohr_archives_homepage') }} "> <i class="icon-user-following"></i>
+                                    Gestion des Archives
+                                    <span class="arrow"></span>
+                                </a>
+                            </li>
+
+                            {#                            <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">#}
+                            {#                                <a href="{{  path('archives_list_form') }}"> <i class="icon-users"></i>#}
+                            {#                                    Liste des Patients#}
+                            {#                                    <span class="arrow"></span>#}
+                            </a>
+                            </li>
+
+                            <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                <a href="{# {{ path('software_bookings') }} #}"> <i class="icon-plane"></i>
+                                    Gestion des sorties
+                                    <span class="arrow"></span>
+                                </a>
+                            </li>
+                            <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown ">
+                                <a href=" {{ path('archives_Service_form') }}"> <i class="icon-plane"></i>
+                                    Gestion des Services
+                                    <span class="arrow"></span>
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

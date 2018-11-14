@@ -1,0 +1,88 @@
+ibn_zohr_archives_homepage:
+    path:     /
+    defaults: { _controller: IbnZohrArchivesBundle:Default:index }
+
+archives_add_form:
+  path: /archives/add/form
+  defaults: { _controller: IbnZohrArchivesBundle:Default:addForm }
+
+archives_add:
+  path: /archives/add
+  defaults: { _controller: IbnZohrArchivesBundle:Default:add }
+
+archives_edit_form:
+  path: /archives/edit/form/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:editForm }
+
+archives_edit:
+  path: /archives/edit/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:edit }
+
+archives_delete:
+  path: /archives/delete/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:delete }
+
+archives_sorties_form:
+  path: /archives/sorties/list/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:sorties }
+
+archives_sorties:
+  path: /archives/sorties/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:sorties }
+
+archives_addsorties_form:
+  path: /archives/addsorties/form/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:addsortiesForm }
+
+archives_addsorties:
+  path: /archives/addsorties/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:addsorties }
+
+archives_Service_form:
+  path: /archives/Service/form
+  defaults: { _controller: IbnZohrArchivesBundle:Default:ServiceForm }
+
+archives_Service:
+  path: /archives/Service
+  defaults: { _controller: IbnZohrArchivesBundle:Default:Service }
+
+archives_addService_form:
+  path: /archives/addService/form
+  defaults: { _controller: IbnZohrArchivesBundle:Default:addServiceForm }
+
+archives_addService:
+  path: /archives/addService
+  defaults: { _controller: IbnZohrArchivesBundle:Default:addService }
+
+archives_deleteService:
+  path: /archives/deleteService/{id}
+  defaults: { _controller: IbnZohrArchivesBundle:Default:deleteService }
+
+
+#archives_patient_form:
+#  path: /archives/patient/form
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:patientForm }
+#
+#archives_patient:
+#  path: /archives/patient
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:patient }
+
+#archives_list_form:
+#  path: /archives/list/form
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:listForm }
+#
+#archives_list:
+#  path: /archives/list
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:list }
+#
+#archives_deletepatient:
+#  path: /archives/deletepatient/{id}
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:deletepatient }
+#
+#archives_editPatient_form:
+#  path: /archives/editPatient/form/{id}
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:editPatientForm }
+#
+#archives_editPatient:
+#  path: /archives/editPatient/{id}
+#  defaults: { _controller: IbnZohrArchivesBundle:Default:editPatient }

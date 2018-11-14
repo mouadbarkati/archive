@@ -1,0 +1,72 @@
+{% extends 'IbnZohrArchivesBundle:Base:layout.html.twig' %}
+
+{% block body %}
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <a href="#">Gestion des Archives</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Liste des Archives</span>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-social-dribbble font-dark hide"></i>
+                        <span class="caption-subject font-dark bold uppercase">Liste des archives</span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-cloud-uplosad"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-wrench"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+
+                    <a href="{{ path('archives_patient_form')}}" target="_blank" class="btn green">Ajouter Patient</a>
+                    <div class="bootstrap-table">
+
+                        <div class="fixed-table-container">
+                            <div class="fixed-table-header">
+                                <table class="table table-hover" >
+                                    <thead>
+                                    <th>Prénom</th>
+                                    <th>Nom</th>
+                                    <th>Age</th>
+                                    <th>Adress</th>
+                                    <th>Actions</th>
+                                    </thead>
+                                    <tbody>
+                                        {% for patient in patient %}
+                                            <tr>
+                                                <td>{{  patient.firstName }}</td>
+                                                <td>{{  patient.lastName }}</td>
+                                                <td>{{  patient.age }}</td>
+                                                <td>{{  patient.address }}</td>
+
+                                                <td>
+                                                    <a href="{{path('archives_editPatient_form', {'id':patient.id } )}}" target="_blank" class="btn yellow">Modifier</a>
+                                                    <a href="{{path('archives_deletepatient', {'id':patient.id } )}}" class="btn red">Supprimer</a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

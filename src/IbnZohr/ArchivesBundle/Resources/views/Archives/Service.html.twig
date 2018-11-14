@@ -1,0 +1,70 @@
+{% extends 'IbnZohrArchivesBundle:Base:layout.html.twig' %}
+
+{% block body %}
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <a href="#">Gestion des Archives</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <span>Liste des Services</span>
+        </li>
+    </ul>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-social-dribbble font-dark hide"></i>
+                        <span class="caption-subject font-dark bold uppercase">Liste des Sorties</span>
+                    </div>
+                    <div class="actions">
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-cloud-uplosad"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-wrench"></i>
+                        </a>
+                        <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                            <i class="icon-trash"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <a href="{{ path('archives_addService_form')}}"  class="btn green">Ajouter Service</a>
+
+                    <div class="bootstrap-table">
+
+                        <div class="fixed-table-container">
+                            <div class="fixed-table-header">
+                                <table class="table table-hover" >
+                                    <thead>
+                                    <th>Nom de service</th>
+                                    <th>description</th>
+                                    <th>Actions</th>
+                                    </thead>
+                                    <tbody>
+                                        {% for service in services %}
+                                            <tr>
+                                                <td>{{ service.name }}</td>
+                                                <td>{{ service.description }}</td>
+
+                                                <td>
+                                                    <a href="#" target="_blank" class="btn yellow">Modifier</a>
+                                                    <a href="{{path('archives_deleteService', {'id':service.id } )}}" class="btn red">Supprimer</a>
+                                                </td>
+
+                                            </tr>
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
